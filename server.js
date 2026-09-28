@@ -5,7 +5,7 @@ const path = require("path");
 const crypto = require("crypto");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const DATA_FILE = path.join(__dirname, "data", "data.json");
 
@@ -14,11 +14,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   session({
-    secret: process.env.SESSION_SECRET || 'your-secret-key',
-    resave: false,
-    saveUninitialized: false,
-    app.use(
-  session({
     secret: process.env.SESSION_SECRET || "royal-arctic-rental-secret-key",
     resave: false,
     saveUninitialized: false,
@@ -26,8 +21,6 @@ app.use(
       checkPeriod: 86400000
     })
   })
-);
-})
 );
 
 app.use(express.static(path.join(__dirname, "public")));
@@ -659,12 +652,9 @@ app.get("*", (req, res) => {
     )
   );
 });
-const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-});
-
   console.log("");
   console.log("==============================");
   console.log(" ROYAL ARCTIC RENTAL");
