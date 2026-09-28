@@ -1,0 +1,111 @@
+<%- include("../partials/header") %>
+
+<section class="section">
+
+<div class="container">
+
+<h1 class="section-title">
+My Bookings
+</h1>
+
+<p class="text-muted mb-5">
+View recent rental reservations.
+</p>
+
+<% if (bookings.length === 0) { %>
+
+<div class="booking-card text-center py-5">
+
+<h3>
+No bookings yet
+</h3>
+
+<p class="text-muted">
+You haven't made a reservation.
+</p>
+
+<a
+href="/vehicles"
+class="primary-button"
+>
+Rent a Vehicle
+</a>
+
+</div>
+
+<% } else { %>
+
+<div class="row g-4">
+
+<% bookings.slice().reverse().forEach(booking => { %>
+
+<div class="col-lg-6">
+
+<div class="booking-card">
+
+<div class="d-flex justify-content-between">
+
+<h4>
+<%= booking.vehicleName %>
+</h4>
+
+<span class="badge
+<%= booking.status === 'Confirmed'
+? 'bg-success'
+: booking.status === 'Cancelled'
+? 'bg-danger'
+: 'bg-warning text-dark'
+%>
+">
+
+<%= booking.status %>
+
+</span>
+
+</div>
+
+<hr>
+
+<p>
+<strong>Customer:</strong>
+<%= booking.customerName %>
+</p>
+
+<p>
+<strong>Pick-up:</strong>
+<%= booking.pickupDate %>
+</p>
+
+<p>
+<strong>Drop-off:</strong>
+<%= booking.dropoffDate %>
+</p>
+
+<p>
+<strong>Location:</strong>
+<%= booking.location %>
+</p>
+
+<h4>
+$<%= booking.total %>
+</h4>
+
+<small class="text-muted">
+Booking ID: <%= booking.id %>
+</small>
+
+</div>
+
+</div>
+
+<% }) %>
+
+</div>
+
+<% } %>
+
+</div>
+
+</section>
+
+<%- include("../partials/footer") %>

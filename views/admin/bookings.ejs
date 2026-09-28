@@ -1,0 +1,196 @@
+<%- include("../partials/header") %>
+
+<div class="container-fluid">
+
+<div class="row">
+
+<div class="col-lg-2 p-0">
+
+<div class="admin-sidebar">
+
+<h4 class="mb-4">
+❄ ADMIN
+</h4>
+
+<a href="/admin">
+Dashboard
+</a>
+
+<a href="/admin/vehicles">
+Vehicles
+</a>
+
+<a href="/admin/bookings">
+Bookings
+</a>
+
+<a href="/">
+View Website
+</a>
+
+<a href="/admin/logout">
+Logout
+</a>
+
+</div>
+
+</div>
+
+<div class="col-lg-10">
+
+<div class="p-4">
+
+<h1 class="fw-bold">
+Booking Management
+</h1>
+
+<p class="text-muted">
+Manage customer reservations.
+</p>
+
+<div class="booking-card mt-4">
+
+<div class="table-responsive">
+
+<table class="table align-middle">
+
+<thead>
+
+<tr>
+
+<th>Customer</th>
+<th>Vehicle</th>
+<th>Dates</th>
+<th>Total</th>
+<th>Status</th>
+<th>Update</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<% bookings.slice().reverse().forEach(booking => { %>
+
+<tr>
+
+<td>
+
+<strong>
+<%= booking.customerName %>
+</strong>
+
+<br>
+
+<small>
+<%= booking.customerPhone %>
+</small>
+
+<br>
+
+<small>
+<%= booking.customerEmail %>
+</small>
+
+</td>
+
+<td>
+<%= booking.vehicleName %>
+</td>
+
+<td>
+
+<%= booking.pickupDate %>
+
+<br>
+
+→
+
+<br>
+
+<%= booking.dropoffDate %>
+
+</td>
+
+<td>
+<strong>
+$<%= booking.total %>
+</strong>
+</td>
+
+<td>
+
+<span class="badge
+<%= booking.status === 'Confirmed'
+? 'bg-success'
+: booking.status === 'Cancelled'
+? 'bg-danger'
+: 'bg-warning text-dark'
+%>
+">
+
+<%= booking.status %>
+
+</span>
+
+</td>
+
+<td>
+
+<form
+action="/admin/bookings/status/<%= booking.id %>"
+method="POST"
+>
+
+<select
+name="status"
+class="form-select form-select-sm"
+onchange="this.form.submit()"
+>
+
+<option
+<%= booking.status === "Pending" ? "selected" : "" %>
+>
+Pending
+</option>
+
+<option
+<%= booking.status === "Confirmed" ? "selected" : "" %>
+>
+Confirmed
+</option>
+
+<option
+<%= booking.status === "Cancelled" ? "selected" : "" %>
+>
+Cancelled
+</option>
+
+</select>
+
+</form>
+
+</td>
+
+</tr>
+
+<% }) %>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<%- include("../partials/footer") %>

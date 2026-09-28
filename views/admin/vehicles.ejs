@@ -1,0 +1,312 @@
+<%- include("../partials/header") %>
+
+<div class="container-fluid">
+
+<div class="row">
+
+<div class="col-lg-2 p-0">
+
+<div class="admin-sidebar">
+
+<h4 class="mb-4">
+❄ ADMIN
+</h4>
+
+<a href="/admin">
+Dashboard
+</a>
+
+<a href="/admin/vehicles">
+Vehicles
+</a>
+
+<a href="/admin/bookings">
+Bookings
+</a>
+
+<a href="/">
+View Website
+</a>
+
+<a href="/admin/logout">
+Logout
+</a>
+
+</div>
+
+</div>
+
+<div class="col-lg-10">
+
+<div class="p-4">
+
+<h1 class="fw-bold">
+Vehicle Management
+</h1>
+
+<div class="booking-card mt-4">
+
+<h3>
+Add New Vehicle
+</h3>
+
+<form
+action="/admin/vehicles/add"
+method="POST"
+class="mt-3"
+>
+
+<div class="row g-3">
+
+<div class="col-md-6">
+
+<label class="form-label">
+Vehicle Name
+</label>
+
+<input
+name="name"
+class="form-control"
+placeholder="BMW 3 Series"
+required
+>
+
+</div>
+
+<div class="col-md-6">
+
+<label class="form-label">
+Category
+</label>
+
+<select name="category" class="form-select">
+
+<option>Premium</option>
+<option>Luxury</option>
+<option>SUV</option>
+<option>Economy</option>
+
+</select>
+
+</div>
+
+<div class="col-md-4">
+
+<label class="form-label">
+Price per day
+</label>
+
+<input
+name="price"
+type="number"
+class="form-control"
+required
+>
+
+</div>
+
+<div class="col-md-4">
+
+<label class="form-label">
+Transmission
+</label>
+
+<select name="transmission" class="form-select">
+
+<option>Automatic</option>
+<option>Manual</option>
+
+</select>
+
+</div>
+
+<div class="col-md-4">
+
+<label class="form-label">
+Seats
+</label>
+
+<input
+name="seats"
+type="number"
+class="form-control"
+value="5"
+required
+>
+
+</div>
+
+<div class="col-md-6">
+
+<label class="form-label">
+Fuel
+</label>
+
+<input
+name="fuel"
+class="form-control"
+placeholder="Petrol"
+required
+>
+
+</div>
+
+<div class="col-md-6">
+
+<label class="form-label">
+Location
+</label>
+
+<input
+name="location"
+class="form-control"
+placeholder="Reykjavik"
+required
+>
+
+</div>
+
+<div class="col-12">
+
+<label class="form-label">
+Image URL
+</label>
+
+<input
+name="image"
+class="form-control"
+placeholder="https://..."
+required
+>
+
+</div>
+
+<div class="col-12">
+
+<label class="form-label">
+Description
+</label>
+
+<textarea
+name="description"
+class="form-control"
+rows="3"
+required
+></textarea>
+
+</div>
+
+<div class="col-12">
+
+<button class="primary-button border-0">
+Add Vehicle
+</button>
+
+</div>
+
+</div>
+
+</form>
+
+</div>
+
+<div class="booking-card mt-4">
+
+<h3>
+Current Vehicles
+</h3>
+
+<div class="table-responsive">
+
+<table class="table align-middle">
+
+<thead>
+
+<tr>
+
+<th>Vehicle</th>
+<th>Category</th>
+<th>Price</th>
+<th>Location</th>
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<% vehicles.forEach(vehicle => { %>
+
+<tr>
+
+<td>
+
+<div class="d-flex align-items-center gap-3">
+
+<img
+src="<%= vehicle.image %>"
+width="80"
+height="50"
+style="object-fit:cover;border-radius:8px"
+>
+
+<strong>
+<%= vehicle.name %>
+</strong>
+
+</div>
+
+</td>
+
+<td>
+<%= vehicle.category %>
+</td>
+
+<td>
+$<%= vehicle.price %>
+</td>
+
+<td>
+<%= vehicle.location %>
+</td>
+
+<td>
+
+<form
+action="/admin/vehicles/delete/<%= vehicle.id %>"
+method="POST"
+onsubmit="return confirm('Delete this vehicle?')"
+>
+
+<button
+class="btn btn-outline-danger btn-sm"
+>
+Delete
+</button>
+
+</form>
+
+</td>
+
+</tr>
+
+<% }) %>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<%- include("../partials/footer") %>

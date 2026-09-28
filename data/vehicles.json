@@ -1,0 +1,80 @@
+[[
+  {
+    "id": "1",
+    "name": "Mercedes-Benz B 180D",
+    "category": "Premium",
+    "price": 89,
+    "location": "Keflavik International Airport",
+    "transmission": "Automatic",
+    "fuel": "Diesel",
+    "seats": 5,
+    "image": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=80",
+    "description": "Premium compact vehicle with excellent comfort, fuel economy and modern features.",
+    "available": true
+  },
+  {
+    "id": "2",
+    "name": "BMW 3 Series",
+    "category": "Luxury",
+    "price": 119,
+    "location": "Reykjavik",
+    "transmission": "Automatic",
+    "fuel": "Petrol",
+    "seats": 5,
+    "image": "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=80",
+    "description": "Elegant and powerful luxury sedan for business and leisure trips.",
+    "available": true
+  },
+  {
+    "id": "3",
+    "name": "Toyota RAV4",
+    "category": "SUV",
+    "price": 99,
+    "location": "Reykjavik",
+    "transmission": "Automatic",
+    "fuel": "Hybrid",
+    "seats": 5,
+    "image": "https://images.unsplash.com/photo-1568844293986-8c3e7c0b8c9f?auto=format&fit=crop&w=1200&q=80",
+    "description": "Comfortable SUV with plenty of space for families and long journeys.",
+    "available": true
+  },
+  {
+    "id": "4",
+    "name": "Range Rover Sport",
+    "category": "Luxury",
+    "price": 179,
+    "location": "Reykjavik",
+    "transmission": "Automatic",
+    "fuel": "Petrol",
+    "seats": 5,
+    "image": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1200&q=80",
+    "description": "Premium SUV designed for comfort, performance and adventure.",
+    "available": true
+  },
+  {
+    "id": "5",
+    "name": "Toyota Yaris",
+    "category": "Economy",
+    "price": 59,
+    "location": "Keflavik Airport",
+    "transmission": "Automatic",
+    "fuel": "Petrol",
+    "seats": 5,
+    "image": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80",
+    "description": "Affordable and efficient city car for everyday travel.",
+    "available": true
+  },
+  {
+    "id": "6",
+    "name": "Mercedes-Benz GLE",
+    "category": "Premium",
+    "price": 149,
+    "location": "Reykjavik",
+    "transmission": "Automatic",
+    "fuel": "Diesel",
+    "seats": 5,
+    "image": "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=80",
+    "description": "Spacious premium SUV with advanced technology and comfort.",
+    "available": true
+  }
+]

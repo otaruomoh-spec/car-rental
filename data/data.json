@@ -1,0 +1,136 @@
+{
+  "users": [
+    {
+      "id": "admin-mul6x1a1-3d6f68a6",
+      "name": "Royal Arctic Admin",
+      "email": "admin@royalarctic.com",
+      "password": "3eb3fe66b31e3b4d10fa70b5cad49c7112294af6ae4e476a1c405155d45aa121",
+      "role": "admin",
+      "createdAt": "2026-09-28T11:54:48.923Z"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "car-001",
+      "name": "Mercedes-Benz B 180D",
+      "category": "Premium",
+      "location": "Keflavik International Airport",
+      "price": 89,
+      "transmission": "Automatic",
+      "fuel": "Diesel",
+      "seats": 5,
+      "trunk": "455 L",
+      "rating": 4.8,
+      "reviews": 32,
+      "description": "Premium compact vehicle with excellent comfort, fuel economy and winter-ready features.",
+      "features": [
+        "5 Seats",
+        "Automatic",
+        "Diesel",
+        "455 L Trunk",
+        "Climate Control",
+        "Safety Package",
+        "Winter Tires",
+        "Unlimited Mileage"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=85",
+        "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=900&q=85",
+        "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=900&q=85"
+      ],
+      "available": true
+    },
+    {
+      "id": "car-002",
+      "name": "BMW 3 Series",
+      "category": "Luxury",
+      "location": "Reykjavik Downtown",
+      "price": 109,
+      "transmission": "Automatic",
+      "fuel": "Petrol",
+      "seats": 5,
+      "trunk": "480 L",
+      "rating": 4.9,
+      "reviews": 47,
+      "description": "Elegant luxury sedan combining performance, comfort and modern technology.",
+      "features": [
+        "5 Seats",
+        "Automatic",
+        "Petrol",
+        "480 L Trunk",
+        "Climate Control",
+        "Premium Audio",
+        "Parking Sensors",
+        "Safety Package"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=85",
+        "https://images.unsplash.com/photo-1556189250-72ba954cfc2b?auto=format&fit=crop&w=900&q=85",
+        "https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=900&q=85"
+      ],
+      "available": true
+    },
+    {
+      "id": "car-003",
+      "name": "Toyota RAV4",
+      "category": "SUV",
+      "location": "Keflavik Airport",
+      "price": 99,
+      "transmission": "Automatic",
+      "fuel": "Hybrid",
+      "seats": 5,
+      "trunk": "580 L",
+      "rating": 4.8,
+      "reviews": 61,
+      "description": "Reliable SUV with plenty of space for Iceland adventures and family trips.",
+      "features": [
+        "5 Seats",
+        "Automatic",
+        "Hybrid",
+        "580 L Trunk",
+        "AWD",
+        "Climate Control",
+        "Cruise Control",
+        "Safety Package"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=1200&q=85",
+        "https://images.unsplash.com/photo-1568844293986-8c1f3c2a7b8a?auto=format&fit=crop&w=900&q=85",
+        "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=900&q=85"
+      ],
+      "available": true
+    },
+    {
+      "id": "car-004",
+      "name": "Land Rover Discovery",
+      "category": "SUV",
+      "location": "Reykjavik Downtown",
+      "price": 149,
+      "transmission": "Automatic",
+      "fuel": "Diesel",
+      "seats": 7,
+      "trunk": "840 L",
+      "rating": 4.9,
+      "reviews": 28,
+      "description": "Large premium SUV designed for comfortable group travel and challenging roads.",
+      "features": [
+        "7 Seats",
+        "Automatic",
+        "Diesel",
+        "840 L Trunk",
+        "4x4",
+        "Climate Control",
+        "Heated Seats",
+        "Safety Package"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1200&q=85",
+        "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=85",
+        "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=900&q=85"
+      ],
+      "available": true
+    }
+  ],
+  "bookings": [],
+  "messages": []
+}

@@ -1,0 +1,80 @@
+<%- include("../partials/header") %>
+
+<section class="section">
+
+<div class="container">
+
+<div class="row justify-content-center">
+
+<div class="col-md-5">
+
+<div class="booking-card">
+
+<div class="text-center mb-4">
+
+<div class="display-5">
+⚙️
+</div>
+
+<h1 class="fw-bold">
+Admin Login
+</h1>
+
+<p class="text-muted">
+Manage your rental business
+</p>
+
+</div>
+
+<% if (error) { %>
+
+<div class="alert alert-danger">
+<%= error %>
+</div>
+
+<% } %>
+
+<form action="/admin/login" method="POST">
+
+<label class="form-label">
+Email
+</label>
+
+<input
+type="email"
+name="email"
+class="form-control form-control-lg mb-3"
+required
+>
+
+<label class="form-label">
+Password
+</label>
+
+<input
+type="password"
+name="password"
+class="form-control form-control-lg mb-4"
+required
+>
+
+<button
+class="primary-button border-0 w-100"
+type="submit"
+>
+Login to Dashboard
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<%- include("../partials/footer") %>

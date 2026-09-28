@@ -1,0 +1,190 @@
+<%- include("../partials/header") %>
+
+<div class="container-fluid">
+
+<div class="row">
+
+<div class="col-lg-2 p-0">
+
+<div class="admin-sidebar">
+
+<h4 class="mb-4">
+❄ ROYAL ARCTIC
+</h4>
+
+<a href="/admin">
+<i class="bi bi-speedometer2"></i>
+Dashboard
+</a>
+
+<a href="/admin/vehicles">
+<i class="bi bi-car-front"></i>
+Vehicles
+</a>
+
+<a href="/admin/bookings">
+<i class="bi bi-calendar-check"></i>
+Bookings
+</a>
+
+<a href="/" target="_blank">
+<i class="bi bi-globe"></i>
+View Website
+</a>
+
+<a href="/admin/logout">
+<i class="bi bi-box-arrow-right"></i>
+Logout
+</a>
+
+</div>
+
+</div>
+
+<div class="col-lg-10">
+
+<div class="p-4">
+
+<h1 class="fw-bold">
+Dashboard
+</h1>
+
+<p class="text-muted">
+Welcome back, administrator.
+</p>
+
+<div class="row g-4 mt-2">
+
+<div class="col-md-4">
+
+<div class="dashboard-card">
+
+<p class="text-muted">
+Vehicles
+</p>
+
+<h2>
+<%= vehicles.length %>
+</h2>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="dashboard-card">
+
+<p class="text-muted">
+Bookings
+</p>
+
+<h2>
+<%= bookings.length %>
+</h2>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="dashboard-card">
+
+<p class="text-muted">
+Revenue
+</p>
+
+<h2>
+$<%= revenue.toFixed(2) %>
+</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="booking-card mt-5">
+
+<div class="d-flex justify-content-between">
+
+<h3>
+Recent Bookings
+</h3>
+
+<a href="/admin/bookings">
+View all
+</a>
+
+</div>
+
+<div class="table-responsive mt-3">
+
+<table class="table">
+
+<thead>
+
+<tr>
+
+<th>Customer</th>
+<th>Vehicle</th>
+<th>Dates</th>
+<th>Total</th>
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<% bookings.slice().reverse().slice(0,8).forEach(booking => { %>
+
+<tr>
+
+<td>
+<%= booking.customerName %>
+</td>
+
+<td>
+<%= booking.vehicleName %>
+</td>
+
+<td>
+<%= booking.pickupDate %>
+→
+<%= booking.dropoffDate %>
+</td>
+
+<td>
+$<%= booking.total %>
+</td>
+
+<td>
+<span class="badge bg-secondary">
+<%= booking.status %>
+</span>
+</td>
+
+</tr>
+
+<% }) %>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<%- include("../partials/footer") %>

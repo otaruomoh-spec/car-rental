@@ -1,0 +1,251 @@
+<%- include("../partials/header") %>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="row">
+
+<div class="col-lg-8">
+
+<p class="text-uppercase">
+Premium Car Rental
+</p>
+
+<h1>
+Your Journey.<br>
+Our Vehicles.
+</h1>
+
+<p>
+Discover reliable, comfortable and premium
+vehicles for your next adventure.
+</p>
+
+<a
+href="/vehicles"
+class="primary-button mt-3"
+>
+Explore Vehicles
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="container">
+
+<div class="search-box">
+
+<form action="/vehicles" method="GET">
+
+<div class="row g-3">
+
+<div class="col-md-5">
+
+<label>Search vehicle</label>
+
+<input
+name="search"
+class="form-control"
+placeholder="Mercedes, BMW, Toyota..."
+>
+
+</div>
+
+<div class="col-md-4">
+
+<label>Vehicle type</label>
+
+<select
+name="category"
+class="form-select"
+>
+
+<option value="">All Vehicles</option>
+<option value="Premium">Premium</option>
+<option value="SUV">SUV</option>
+<option value="Economy">Economy</option>
+<option value="Luxury">Luxury</option>
+
+</select>
+
+</div>
+
+<div class="col-md-3 d-flex align-items-end">
+
+<button class="btn btn-dark w-100 py-2">
+Search Vehicles
+</button>
+
+</div>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+<section class="section">
+
+<div class="container">
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+<div>
+
+<p class="text-muted mb-1">
+OUR FLEET
+</p>
+
+<h2 class="section-title">
+Featured Vehicles
+</h2>
+
+</div>
+
+<a href="/vehicles" class="primary-button">
+View All
+</a>
+
+</div>
+
+<div class="row g-4">
+
+<% vehicles.forEach(vehicle => { %>
+
+<div class="col-md-6 col-lg-4">
+
+<div class="vehicle-card">
+
+<img src="<%= vehicle.image %>">
+
+<div class="vehicle-content">
+
+<h3>
+<%= vehicle.name %>
+</h3>
+
+<p class="text-muted">
+<%= vehicle.category %> ·
+<%= vehicle.transmission %> ·
+<%= vehicle.seats %> Seats
+</p>
+
+<div class="d-flex justify-content-between align-items-center">
+
+<span class="vehicle-price">
+$<%= vehicle.price %>/day
+</span>
+
+<a
+href="/vehicles/<%= vehicle.id %>"
+class="btn btn-outline-dark rounded-pill"
+>
+View
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<% }) %>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section bg-white">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<p class="text-muted">
+WHY ROYAL ARCTIC
+</p>
+
+<h2 class="section-title">
+Everything You Need
+</h2>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+
+<div class="feature-box">
+
+<div class="feature-icon">
+<i class="bi bi-car-front"></i>
+</div>
+
+<h4>Premium Fleet</h4>
+
+<p>
+Modern vehicles maintained to
+high standards.
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="feature-box">
+
+<div class="feature-icon">
+<i class="bi bi-shield-check"></i>
+</div>
+
+<h4>Fully Insured</h4>
+
+<p>
+Drive confidently with our
+rental protection.
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="feature-box">
+
+<div class="feature-icon">
+<i class="bi bi-headset"></i>
+</div>
+
+<h4>24/7 Support</h4>
+
+<p>
+Our team is available whenever
+you need assistance.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<%- include("../partials/footer") %>
