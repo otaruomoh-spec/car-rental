@@ -17,14 +17,17 @@ app.use(
     secret: process.env.SESSION_SECRET || 'your-secret-key',
     resave: false,
     saveUninitialized: false,
+    app.use(
+  session({
+    secret: process.env.SESSION_SECRET || "royal-arctic-rental-secret-key",
+    resave: false,
+    saveUninitialized: false,
     store: new session.MemoryStore({
-      checkPeriod: 86400000 // Automatically clear expired sessions every 24 hours (in milliseconds)
+      checkPeriod: 86400000
     })
   })
 );
-
-    secret: "royal-arctic-rental-secret-change-this",
-  })
+})
 );
 
 app.use(express.static(path.join(__dirname, "public")));
