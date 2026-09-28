@@ -12,8 +12,6 @@ const DATA_FILE = path.join(__dirname, "data", "data.json");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const session = require('express-session');
-
 app.use(
   session({
     secret: process.env.SESSION_SECRET || 'your-secret-key',
